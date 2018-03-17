@@ -1,0 +1,83 @@
+body{
+    background-color: #000;
+}
+
+#landing-header{
+    z-index:1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+}
+
+#landing-header h1{
+    color: #fff;
+}
+
+.slideshow{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://i.pinimg.com/originals/46/7a/a8/467aa8b5e6269d6d2d3a828d4f55ec45.jpg);
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(http://nebula.wsimg.com/e8cecbc9b6d20a057bea22d2949730d8?AccessKeyId=DEF5A685C9EB3BAE5804&disposition=0&alloworigin=1);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://static1.squarespace.com/static/53a047c2e4b0b7f569f5131f/t/542a42a2e4b0d37b17640c6f/1412055716052/);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://www.homeproperties.com/getmedia/447040b6-045d-4a44-a27e-1245aba691ac/756_ParkGrove/Amenity/5-756-AMN-012hr-not-transferable.jpg.aspx);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  animation-delay: 40s; 
+}
+
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}

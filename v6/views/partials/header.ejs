@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>YelpCamp</title>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+<body>
+<nav class="navbar navbar-default fixed-top ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsebar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">YelpCamp  <i class="fas fa-camera-retro"></i></a>
+      <ul class="nav navbar-nav">
+        <li><a href="/campgrounds">Camps</a></li>
+      </ul>
+    </div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="collapsebar">
+          <ul class="nav navbar-nav navbar-right">
+        <% if(!currentUser){ %>
+              <li><a href="/login">Login <i class="fas fa-sign-in-alt"></i></a></li>
+              <li><a href="/register">Signup <i class="fas fa-user-plus"></i></a></li>
+        <% }else{  %>
+              <li><a href="#"><i class="fas fa-user"></i> <%= currentUser.username %></a></li>
+              <li><a href="/logout">Logout <i class="fas fa-sign-out-alt"></i></a></li>
+        <% } %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<% if(error && error.length>0){ %>
+<div class="container">
+     <div class="alert alert-danger flashMessage" role="alert">
+        <%= error %>
+     </div>
+</div>
+<% } %>
+
+ <% if(success && success.length>0){ %>
+ <div class="container">
+     <div class="alert alert-success flashMessage" role="alert">
+        <%= success %>
+     </div>
+</div>
+<% } %>
