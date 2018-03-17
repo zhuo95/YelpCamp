@@ -1,0 +1,10 @@
+<% include partials/header %>
+
+<div class="container">
+    <h1><%= campground.name  %></h1>
+    <img src="<%= campground.image %>">
+    <p><%=campground.description  %></p>
+    <a href="/remove/<%= campground._id %>" class="btn btn-danger" id="remove">Remove</a>
+</div>
+
+<% include partials/footer %>
